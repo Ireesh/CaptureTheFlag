@@ -9,13 +9,9 @@ The task should be easy, so we start with something simple - first, we open the 
 
 ```html
 <style>
-
-&nbsp;   body {
-
-&nbsp;       background-image: url("background.png");
-
-&nbsp;   }
-
+   body {
+     background-image: url("background.png");
+   }
 </style>
 ```
 
