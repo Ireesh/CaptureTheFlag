@@ -17,5 +17,5 @@ The task should be easy, so we start with something simple - first, we open the 
 
 
 
-This seems excessive for a page with a white background. The image is located in the root directory, so we append /background.png to the original URL and get our flag.
+This seems excessive for a page with a white background. The image is located in the root directory, so we append `/background.png` to the original URL and get our flag.
 
