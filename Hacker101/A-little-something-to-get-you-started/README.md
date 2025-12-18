@@ -1,4 +1,4 @@
-\#Hacker101 CTF: A little something to get you started
+# Hacker101 CTF: A little something to get you started
 
 
 
@@ -7,7 +7,7 @@ We open the challenge page and see nothing except a welcome message and a white 
 The task should be easy, so we start with something simple - first, we open the page source code using CTRL+U.
 
 
-
+```html
 <style>
 
 &nbsp;   body {
@@ -17,6 +17,7 @@ The task should be easy, so we start with something simple - first, we open the 
 &nbsp;   }
 
 </style>
+```
 
 
 
