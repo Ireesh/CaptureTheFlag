@@ -31,7 +31,7 @@ A pop-up appears — the script works. No flag is visible. I call up the page so
 * One flag remains. Let's return to the address bar. Since we already noticed that navigation works via numbering, there's a chance of SQL-injection. I tryed to add single quщеу in the end of `page/1'`. Nothing happens. Then I try another address: `page/edit/1'` — success! Got the fourth flag.
   
 ## Created two simple scripts for practicing `Bash script` and `Powershell script` that automatically test IDOR vulnerabilities:
-###Bash script
+### Bash script
 ```bash
 BASE_URL="https://7ad74e50dcf3b126520d2ae4315e6e80.ctf.hacker101.com"
 IDS=("0" "-1" "flag" "admin" "3" "4" "5" "6" "7" "test")
@@ -61,7 +61,7 @@ for path in "${PATHS[@]}"; do
     done
 done
 ```
-###Powershell script
+### Powershell script
 ```powershell
 $base_url = "https://7ad74e50dcf3b126520d2ae4315e6e80.ctf.hacker101.com"
 $ids = @("0", "-1", "flag", "admin", "3", "4", "5", "6", "7", "test")
