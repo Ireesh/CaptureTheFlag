@@ -5,9 +5,9 @@
 | Challenge | Difficulty | Status | Notes |
 |-----------|------------|--------|-------|
 | A little something to get you started | Warmup | ✅ Completed | Basic recon techniques |
-| Micro-CMS v1 | Easy | 🔄 In Progress | ... |
+| Micro-CMS v1 | Easy | ✅ Completed | XSS, SQL-injection, IDOR |
 | Micro-CMS v2 | Medium | ❌ Not Started | ... |
-| Photo Gallery | Easy | ❌ Not Started | ... |
+| Photo Gallery | Easy | 🔄 In Progress | ... |
 | Cody | Hard | ❌ Not Started | ... |
 
 ### 📝 How to use
