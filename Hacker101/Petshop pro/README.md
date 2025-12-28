@@ -12,5 +12,7 @@ Before
 "cart=%5B%5B1%2C+%7B%22name%22%3A+%22Puppy%22%2C+%22desc%22%3A+%228%5C%22x10%5C%22+color+glossy+photograph+of+a+puppy.%22%2C+%22logo%22%3A+%22puppy.jpg%22%2C+%22price%22%3A+7.95%7D%5D%5D"
 
 After
-"cart=%5B%5B1%2C+%7B%22name%22%3A+%22Puppy%22%2C+%22desc%22%3A+%228%5C%22x10%5C%22+color+glossy+photograph+of+a+puppy.%22%2C+%22logo%22%3A+%22puppy.jpg%22%2C+%22price%22%3A+0%7D%5D%5D",```
+"cart=%5B%5B1%2C+%7B%22name%22%3A+%22Puppy%22%2C+%22desc%22%3A+%228%5C%22x10%5C%22+color+glossy+photograph+of+a+puppy.%22%2C+%22logo%22%3A+%22puppy.jpg%22%2C+%22price%22%3A+0%7D%5D%5D"
+```
+
 Click on the `checkout` request then `copy as fetch` and paste to the `console` in browser developers menu. Send! Go to the response and get ^FIRST FLAG^!
