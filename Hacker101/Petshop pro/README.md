@@ -2,6 +2,7 @@
 
 Let's try new format, without excess water.
 The challenge provides a simple petshop page which includes two images and buttons for adding to the busket.
+
 <img width="783" height="453" alt="image" src="https://github.com/user-attachments/assets/5ccbeae9-a5b1-4c00-bd71-ad583948499a" />
 
 ## Flag №1: Price Manipulation
