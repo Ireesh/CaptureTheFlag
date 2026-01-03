@@ -7,7 +7,8 @@
 | A little something to get you started | Warmup | ✅ Completed | Basic recon techniques |
 | Micro-CMS v1 | Easy | ✅ Completed | XSS, SQL-injection, IDOR |
 | Petshop pro | Easy | ✅ Completed | IDOR, Security misconfiguration, XSS  |
-| Postbook | Easy | 🔄 In Progress | ... |
+| Postbook | Easy | ✅ Completed  | IDOR, Weak session management, Access control, Insecure direct object references, Authentication flaws, Hidden field tampering, Information disclosure, Business logic bypass |
+| BugDB v1 | Easy | 🔄 In Progress | ... |
 | Cody | Hard | ❌ Not Started | ... |
 
 ### 📝 How to use
