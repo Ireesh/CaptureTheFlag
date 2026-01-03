@@ -1,10 +1,10 @@
-<img width="754" height="438" alt="Снимок экрана 2026-01-03 170518" src="https://github.com/user-attachments/assets/0044f644-a679-40d4-975b-cdecdf79a566" />### Hacker101 CTF: Postbook
+### Hacker101 CTF: Postbook
+
+<img width="754" height="438" alt="Снимок экрана 2026-01-03 170518" src="https://github.com/user-attachments/assets/0044f644-a679-40d4-975b-cdecdf79a566" />
 
 ## Flag №1:
 For the first, we will try to create an account on the site. Go to the `Sign up` and fill out the form, press enter and successfully create a new user.
 On the main page, we see posts of other users. The first post belongs to the admin, let’s see it and research a navigation. What is in the source path:
-
-![Uploading Снимок экрана 2026-01-03 170518.png…]()
 
 ```html
 https://64648a3dc11e5107fbbc064f73b9d5c9.ctf.hacker101.com/index.php?page=view.php&id=1
@@ -27,7 +27,6 @@ Looks on what we got in the `/pages/`:
 
 <img width="729" height="476" alt="Снимок экрана 2026-01-03 170616" src="https://github.com/user-attachments/assets/730d0ce7-adf0-427a-94c2-bbf3f0927742" />
 
-
 We see allow directories and Apache server version. It`s good! Let’s try to edit the admin post by the path that we found before. Change `view` on `edit`:
 
 ```html
@@ -46,7 +45,6 @@ https://64648a3dc11e5107fbbc064f73b9d5c9.ctf.hacker101.com/index.php?page=edit.p
 Change id in the source line and it appears. Hidden admins private diary. Make it visible! Uncheck the box at the end of form and get the **SECOND FLAG**.
 
 <img width="348" height="402" alt="Снимок экрана 2026-01-03 170647" src="https://github.com/user-attachments/assets/35613538-5129-441a-ad79-4732bb5a1fd9" />
-
 
 ## Flag №3:
 
@@ -100,14 +98,14 @@ We already found flags for `edit` and `delete` options, what else? Certainly! Cr
 
 ```html
  <input type="hidden" name="user_id" value="3" />
-```html
+```
 
-So, `value=”3” is the user id. Create a random post and save it. We got two requests and the first is what we need. `Copy as fetch` it in the `DevTools` and change a value, for example, on 1 that is the admin id, send it and we will get the **SIXTH FLAG**.
+So, `value=”3”` is the user id. Create a random post and save it. We got two requests and the first is what we need. `Copy as fetch` it in the `DevTools` and change a value, for example, on 1 that is the admin id, send it and we will get the **SIXTH FLAG**.
 
 ### Flag №7
 
 The seventh flag was also so simple that I needed to use the hint.
-‘The hint is: 189*5’
+`The hint is: 189*5`
 Let’s try to apply it to a post's id. For the practice I used a simple bash script, but you may just fill out with it a id place ‘945’.
 
 ```bash
