@@ -12,7 +12,7 @@ In the first version of the task, there was an SQL injection vulnerability, so l
 ```
 We received an `Invalid password` message, meaning we passed the username check. Attempting the same with the password was unsuccessful. Let's use the hint provided. One hint suggests using `UNION SELECT`. Let's try that:
 
-``mysql
+```mysql
 username:
 ‘ union select ‘admin’ – ‘
 
