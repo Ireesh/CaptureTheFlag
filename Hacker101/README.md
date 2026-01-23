@@ -10,7 +10,8 @@
 | Postbook | Easy | ✅ Completed  | IDOR, Weak session management, Access control, Insecure direct object references, Authentication flaws, Hidden field tampering, Information disclosure, Business logic bypass |
 | BugDB v1 | Easy | ✅ Completed | Information Disclosure, IDOR |
 | Micro-CMS v2 | Moderate | ✅ Completed |  Improper HTTP Method Validation, Blind SQL-injection, SQLi + Authentication Logic Flaw |
-| Photo gallery | Moderate | 🔄 In Progress | ... |
+| Photo gallery | Moderate | ✅ Completed |   Remote Code Execution, SQL Injection Chain, Source Code Disclosure via Path Traversal |
+| Cody's First Blog | Moderate | 🔄 In Progress | ... |
 | Cody | Hard | ❌ Not Started | ... |
 
 ### 📝 How to use
